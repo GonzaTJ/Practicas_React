@@ -1,13 +1,16 @@
+import { useState } from "react";
+
 function Contador(){
     
     //Estado del componente
-    let contador =0;
+    const[contador, setContador] = useState(0);
+
     return(
         <div>
             <p>
-                Haz realizado tantos clicks en el boton.
+                Haz realizado {contador} clicks en el boton.
             </p>
-            <button>Pulsa si te la bancas</button>
+            <button onClick={()=>{setContador(contador + 1)}}>Pulsa si te la bancas</button>
         </div>
     );
 }
